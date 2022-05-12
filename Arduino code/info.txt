@@ -1,1 +1,60 @@
 Zet hier de arduino code
+
+#define LED1 12
+#define LED2 11
+#define LED3 10
+#define LED4 9
+#define LED5 8
+
+const int BUTTON = 2;
+int BUTTONstate = 0;
+
+
+void setup() {
+  pinMode(BUTTON, INPUT);
+  pinMode(LED1, OUTPUT);
+  pinMode(LED2, OUTPUT);
+  pinMode(LED3, OUTPUT);
+  pinMode(LED4, OUTPUT);
+  pinMode(LED5, OUTPUT);
+}
+
+void loop() {
+
+
+  BUTTONstate = digitalRead(BUTTON);
+  if (BUTTONstate == 1)
+  {
+    digitalWrite(LED1, HIGH);
+    delay(500);
+
+    digitalWrite(LED2, HIGH);
+    digitalWrite(LED1, LOW);
+    delay(500);
+
+    digitalWrite(LED3, HIGH);
+    digitalWrite(LED2, LOW);
+    delay(500);
+
+    digitalWrite(LED4, HIGH);
+    digitalWrite(LED3, LOW);
+    delay(500);
+
+    digitalWrite(LED5, HIGH);
+    digitalWrite(LED4, LOW);
+    delay(500);
+
+    digitalWrite(LED5, LOW);
+
+  }
+  else {
+    digitalWrite(LED1, LOW);
+    digitalWrite(LED2, LOW);
+    digitalWrite(LED3, LOW);
+    digitalWrite(LED4, LOW);
+    digitalWrite(LED5, LOW);
+  }
+
+
+
+}
